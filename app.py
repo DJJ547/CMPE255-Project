@@ -33,10 +33,10 @@ def submit():
     user_input = [user_input]
 
     if MODEL_TO_USE == 'knn':
-        result = knn.predict_with_knn_model(user_input)
+        result = knn.predict_model(user_input)
         print("predicted result: ", int(result[0]))
     elif MODEL_TO_USE == 'decision_tree':
-        result = decision_tree.predict_with_decision_tree_model(user_input)
+        result = decision_tree.predict_model(user_input)
         print("predicted result: ", int(result[0]))
 
     result = result.tolist()[0]
