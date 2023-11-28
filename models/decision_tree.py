@@ -45,14 +45,14 @@ def get_column_names():
     column_names = df.columns.values.tolist()
     return column_names
 
-def train_decision_tree_model(X_train, y_train):
+def train_model(X_train, y_train):
     X_train, X_test, y_train, y_test = preprocess_data()
-    model = DecisionTreeClassifier()
-    model.fit(X_train, y_train)
-    return model
+    dt = DecisionTreeClassifier()
+    dt.fit(X_train, y_train)
+    return dt
 
 
-def evaluate_decision_tree_model(dt, X_train, y_train, X_test, y_test, col_names):
+def evaluate_model(dt, X_train, y_train, X_test, y_test, col_names):
     class_names = ['diabetic', 'non-diabetic']
     fig = plt.figure(figsize=(25, 20))
     _ = tree.plot_tree(dt,
@@ -70,9 +70,9 @@ def evaluate_decision_tree_model(dt, X_train, y_train, X_test, y_test, col_names
     print(classification_report(y_test, predictions))
 
 
-def predict_with_decision_tree_model(input):
+def predict_model(input):
     X_train, X_test, y_train, y_test = preprocess_data()
-    dt = train_decision_tree_model(X_train, y_train)
+    dt = train_model(X_train, y_train)
     return dt.predict(input)
 
 # if __name__=="__main__":

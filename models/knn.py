@@ -44,13 +44,13 @@ def preprocess_data():
     return X_train, X_test, y_train, y_test
 
 
-def train_knn_model(X_train, y_train):
+def train_model(X_train, y_train):
     knn = KNeighborsClassifier(n_neighbors=1)
     knn.fit(X_train, y_train)
     return knn
 
 
-def evaluate_knn_model(knn, X_test, y_test):
+def evaluate_model(knn, X_test, y_test):
     y_pred = knn.predict(X_test)
     print("predicted: ", y_pred)
     accuracy = accuracy_score(y_test, y_pred)
@@ -69,9 +69,9 @@ def evaluate_knn_model(knn, X_test, y_test):
     # plt.show()
 
 
-def predict_with_knn_model(input):
+def predict_model(input):
     X_train, X_test, y_train, y_test = preprocess_data()
-    knn = train_knn_model(X_train, y_train)
+    knn = train_model(X_train, y_train)
     return knn.predict(input)
 
 

@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, json, Response
 from flask_cors import CORS
 from utils.process_data import calculate_bmi, determine_heavy_drinker
-from models.knn import predict_with_knn_model
-from models.decision_tree import predict_with_decision_tree_model
+from models import knn, decision_tree
 
 
 app = Flask(__name__, template_folder="templates")
@@ -34,10 +33,10 @@ def submit():
     user_input = [user_input]
 
     if MODEL_TO_USE == 'knn':
-        result = predict_with_knn_model(user_input)
+        result = knn.predict_with_knn_model(user_input)
         print("predicted result: ", int(result[0]))
     elif MODEL_TO_USE == 'decision_tree':
-        result = predict_with_decision_tree_model(user_input)
+        result = decision_tree.predict_with_decision_tree_model(user_input)
         print("predicted result: ", int(result[0]))
 
     result = result.tolist()[0]
