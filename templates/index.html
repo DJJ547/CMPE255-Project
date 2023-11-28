@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>
+		Diabetes Survey
+	</title>
+
+	<style>
+
+		/* Styling the Body element i.e. Color, 
+		Font, Alignment */ 
+		body {
+			background-color: #05c46b;
+			font-family: Verdana;
+			text-align: center;
+		}
+
+		/* Styling the Form (Color, Padding, Shadow) */
+		form {
+			background-color: #fff;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		/* Styling form-control Class */
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+        .form-height {
+            display:flex;
+            text-align: left;
+			margin-bottom: 25px;
+        }
+
+        .form-height input {
+            border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+            width: 20%;
+        }
+
+        .form-height label {
+            padding: 10px;
+        }
+
+		/* Styling form-control Label */ 
+		.form-control label {
+			display: block;
+            text-align: left;
+			margin-bottom: 10px;
+		}
+
+		/* Styling form-control input, 
+		select, textarea */
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+
+		/* Styling form-control Radio 
+		button and Checkbox */
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+
+		/* Styling Button */
+		button {
+			background-color: #05c46b;
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Diabete Form</h1>
+
+	<!-- Create Form -->
+	<form name="surveyForm" id="form">
+
+		<!-- Details -->
+		<div class="form-control">
+			<label for="weight" id="label-weight">Weight <small>in lbs.</small></label>
+			<input type="number" min="0" id="weight" placeholder="Enter your weight" />
+		</div>
+
+		<div class="form-height">
+			<label for="height-ft" id="label-height">Height <small>in feet</small></label>
+			<input type="number" min="0" id="height-ft" placeholder="feet" />
+
+            <label for="height-in" id="label-height"><small>inch</small></label>
+			<input type="number" min="0" id="height-in" placeholder="inch" />
+        </div>
+
+		<div class="form-control">
+			<label for="age" id="label-age">What is your age?</label>
+			<input type="number" min="0" max="125" id="age" placeholder="Enter your age" />
+		</div>
+
+        <div class="form-control">
+			<label for="gender" id="label-gender">What is your gender?</label>
+			<label for="gender-1">
+				<input type="radio" id="gender-1" name="gender" value="1">Male</input>
+			</label>
+			<label for="gender-2">
+				<input type="radio" id="gender-2" name="gender" value="0">Female</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="hbp">Do you have high blood pressure?</label>
+			<label for="hbp-1">
+				<input type="radio" id="hbp-1" name="hbp" value="1">Yes</input>
+			</label>
+			<label for="hbp-2">
+				<input type="radio" id="hbp-2" name="hbp" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="hc">Do you have high cholesterol?</label>
+			<label for="hc-1">
+				<input type="radio" id="hc-1" name="hc" value="1">Yes</input>
+			</label>
+			<label for="hc-2">
+				<input type="radio" id="hc-2" name="hc" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="stroke">Have you ever had a stroke?</label>
+			<label for="stroke-1">
+				<input type="radio" id="stroke-1" name="stroke" value="1">Yes</input>
+			</label>
+			<label for="stroke-2">
+				<input type="radio" id="stroke-2" name="stroke" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="heart">Do you have heart disease?</label>
+			<label for="heart-1">
+				<input type="radio" id="heart-1" name="heart" value="1">Yes</input>
+			</label>
+			<label for="heart-2">
+				<input type="radio" id="heart-2" name="heart" value="0">No</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label for="cholCheck" id="label-cholCheck">Have you had your cholesterol check in the past 5 years?</label>
+			<label for="cholCheck-1">
+				<input type="radio" id="cholCheck-1" name="cholCheck" value="1">Yes</input>
+			</label>
+			<label for="cholCheck-2">
+				<input type="radio" id="cholCheck-2" name="cholCheck" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="smoker">Are you a smoker?</label>
+			<label for="smoker-1">
+				<input type="radio" id="smoker-1" name="smoker" value="1">Yes</input>
+			</label>
+			<label for="smoker-2">
+				<input type="radio" id="smoker-2" name="smoker" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for"physicalAct">Have you had any physical activity in the past 30 days?</label>
+			<label for="physicalAct-1">
+				<input type="radio" id="physicalAct-1" name="physicalAct" value="1">Yes</input>
+			</label>
+			<label for="physicalAct-2">
+				<input type="radio" id="physicalAct-2" name="physicalAct" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="fruit">Do you consume fruit one or more time per day?</label>
+			<label for="fruit-1">
+				<input type="radio" id="fruit-1" name="fruit" value="1">Yes</input>
+			</label>
+			<label for="fruit-2">
+				<input type="radio" id="fruit-2" name="fruit" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="veggies">Do you consume veggies one or more times per day?</label>
+			<label for="veggies-1">
+				<input type="radio" id="veggies-1" name="veggies" value="1">Yes</input>
+			</label>
+			<label for="veggies-2">
+				<input type="radio" id="veggies-2" name="veggies" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="alcohol">How many alcohol do you drink per week?</label>
+			<input type="number" min="0" id="alcohol" placeholder="Enter number of drinks per week" />
+		</div>
+
+        <div class="form-control">
+			<label for="healthcare">Have any kind of health care coverage?<small>including health insurance, prepaid plans such as HMO, etc.</small></label>
+			<label for="healthcare-1">
+				<input type="radio" id="healthcare-1" name="healthcare" value="1">Yes</input>
+			</label>
+			<label for="healthcare-2">
+				<input type="radio" id="healthcare-2" name="healthcare" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="doctor">Was there a time in the past 12 months when you needed to see a doctor but could not because of cost?</label>
+			<label for="doctor-1">
+				<input type="radio" id="doctor-1" name="doctor" value="1">Yes</input>
+			</label>
+			<label for="doctor-2">
+				<input type="radio" id="doctor-2" name="doctor" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="walk">Do you have serious difficulty walking or climbing stairs?</label>
+			<label for="walk-1">
+				<input type="radio" id="walk-1" name="walk" value="1">Yes</input>
+			</label>
+			<label for="walk-2">
+				<input type="radio" id="walk-2" name="walk" value="0">No</input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="healthScore" id="label-healthScore">Would you say that in general your health is: <small>scale 1-5 1 = excellent 2 = very good 3 = good 4 = fair 5 = poor</small></label>
+			<select name="healthScore" id="healthScore">
+                <option disabled selected value> -- select an option -- </option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+                <option value="5">5</option>
+			</select>
+		</div>
+
+        <div class="form-control">
+            <label for="mental">Now thinking about your mental health, which includes stress, depression, and problems with emotions, for how many days you've experienced these during the past 30 days?</label>
+            <input type="number" value="0" min="0" max="30" step="1" class="form-control" id="mental">
+        </div>
+
+        <div class="form-control">
+            <label for="physical">Now thinking about your physical health, which includes physical illness and injury, for how many days you've experienced these during the past 30 days?</label>
+            <input type="number" value="0" min="0" max="30" step="1" class="form-control" id="physical">
+        </div>
+
+        <div class="form-control">
+			<label for="education" id="label-education">What is your education level?<small>scale 1-6 1 = Never attended school or only kindergarten 2 = Grades 1 through 8</small></label>
+			<label for="education-1">
+				<input type="radio" id="education-1" name="education" value="1">Never attended school or only kindergarten</input>
+			</label>
+			<label for="education-2">
+				<input type="radio" id="education-2" name="education" value="2">Grades 1 - 8<small>(Elementary)</small></input>
+			</label>
+            <label for="education-3">
+				<input type="radio" id="education-3" name="education" value="3">Grades 9 - 11<small>(Some high school)</small></input>
+			</label>
+            <label for="education-4">
+				<input type="radio" id="education-4" name="education" value="4">Grade 12 or GED<small>(High school graduate)</small></input>
+			</label>
+            <label for="education-5">
+				<input type="radio" id="education-5" name="education" value="5">College 1 year to 3 years<small>(Some college or technical school)</small></input>
+			</label>
+            <label for="education-6">
+				<input type="radio" id="education-6" name="education" value="6">College 4 years or more<small>(College graduate)</small></input>
+			</label>
+		</div>
+
+        <div class="form-control">
+			<label for="income" id="label-income">How much is your income?<small>scale 1-8 1 = less than $10,000 5 = less than $35,000 8 = $75,000 or more</small></label>
+			<label for="income-1">
+				<input type="radio" id="income-1" name="income" value="1">Less than $10,000</input>
+			</label>
+			<label for="income-2">
+				<input type="radio" id="income-2" name="income" value="2">Less than $15,000<small>($10,000 to less than $15,000)</small></input>
+			</label>
+            <label for="income-3">
+				<input type="radio" id="income-3" name="income" value="3">Less than $20,000<small>($15,000 to less than $20,000)</small></input>
+			</label>
+            <label for="income-4">
+				<input type="radio" id="income-4" name="income" value="4">Less than $25,000<small>($20,000 to less than $25,000)</small></input>
+			</label>
+            <label for="income-5">
+				<input type="radio" id="income-5" name="income" value="5">Less than $35,000<small>($25,000 to less than $35,000)</small></input>
+			</label>
+            <label for="income-6">
+				<input type="radio" id="income-6" name="income" value="6">Less than $50,000<small>($35,000 to less than $50,000)</small></input>
+			</label>
+            <label for="income-7">
+				<input type="radio" id="income-7" name="income" value="7">Less than $75,000<small>($50,000 to less than $75,000)</small></input>
+			</label>
+            <label for="income-8">
+				<input type="radio" id="income-8" name="income" value="8">$75,000 or more</input>
+			</label>
+		</div>
+
+		<button type="button" onclick="handleSubmit(event)" value="submit">
+			Submit
+		</button>
+	</form>
+</body>
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        const weight = document.forms["surveyForm"]["weight"].value;
+        console.log("weight: ", weight)
+        const height_ft = document.forms["surveyForm"]["height-ft"].value;
+        console.log("height_ft: ", height_ft)
+        const height_in = document.forms["surveyForm"]["height-in"].value;
+        console.log("height_in: ", height_in)
+        const age = document.forms["surveyForm"]["age"].value;
+        console.log("age: ", age)
+        const gender = document.forms["surveyForm"]["gender"].value;
+        console.log("gender: ", gender)
+        const hbp = document.forms["surveyForm"]["hbp"].value;
+        console.log("hbp: ", hbp)
+        const hc = document.forms["surveyForm"]["hc"].value;
+        console.log("hc: ", hc)
+        const stroke = document.forms["surveyForm"]["stroke"].value;
+        console.log("stroke: ", stroke)
+        const heart = document.forms["surveyForm"]["heart"].value;
+        console.log("heart: ", heart)
+        const cholCheck = document.forms["surveyForm"]["cholCheck"].value;
+        console.log("cholCheck: ", cholCheck)
+        const smoker = document.forms["surveyForm"]["smoker"].value;
+        console.log("smoker: ", smoker)
+        const physicalAct = document.forms["surveyForm"]["physicalAct"].value;
+        console.log("physicalAct: ", physicalAct)
+        const fruit = document.forms["surveyForm"]["fruit"].value;
+        console.log("fruit: ", fruit)
+        const veggies = document.forms["surveyForm"]["veggies"].value;
+        console.log("veggies: ", veggies)
+        const alcohol = document.forms["surveyForm"]["alcohol"].value;
+        console.log("alcohol: ", alcohol)
+        const healthcare = document.forms["surveyForm"]["healthcare"].value;
+        console.log("healthcare: ", healthcare)
+        const doctor = document.forms["surveyForm"]["doctor"].value;
+        console.log("doctor: ", doctor)
+        const walk = document.forms["surveyForm"]["walk"].value;
+        console.log("walk: ", walk)
+        const healthScore = document.forms["surveyForm"]["healthScore"].value;
+        console.log("healthScore: ", healthScore)
+        const mental = document.forms["surveyForm"]["mental"].value;
+        console.log("mental: ", mental)
+        const physical = document.forms["surveyForm"]["physical"].value;
+        console.log("physical: ", physical)
+        const education = document.forms["surveyForm"]["education"].value;
+        console.log("education: ", education)
+        const income = document.forms["surveyForm"]["income"].value;
+        console.log("income: ", income)
+
+        // Send data using fetch()
+        fetch('http://localhost:5000/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                'weight': weight,
+                'height_ft': height_ft,
+                'height_in': height_in,
+                'age': age,
+                'gender': gender,
+                'hbp': hbp,
+                'hc': hc,
+                'stroke': stroke,
+                'heart': heart,
+                'cholCheck': cholCheck,
+                'smoker': smoker,
+                'physicalAct': physicalAct,
+                'fruit': fruit,
+                'veggies': veggies,
+                'alcohol': alcohol,
+                'healthcare': healthcare,
+                'doctor': doctor,
+                'walk': walk,
+                'healthScore': healthScore,
+                'mental': mental,
+                'physical': physical,
+                'education': education,
+                'income': income,
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the server
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+</html>
+
