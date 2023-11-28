@@ -7,7 +7,7 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0">
 	<title>
-		Diabetes Survey
+		Diabetes Detection Survey
 	</title>
 
 	<style>
@@ -97,7 +97,7 @@
 </head>
 
 <body>
-	<h1>Diabete Form</h1>
+	<h1>Diabete Detection Survey</h1>
 
 	<!-- Create Form -->
 	<form name="surveyForm" id="form">
@@ -331,11 +331,12 @@
 		<button type="button" onclick="handleSubmit(event)" value="submit">
 			Submit
 		</button>
+		<small>Please wait at least 10 sec for data analyzing</small>
 	</form>
 </body>
 <script>
     function handleSubmit(event) {
-        event.preventDefault();
+		event.preventDefault();
         const weight = document.forms["surveyForm"]["weight"].value;
         console.log("weight: ", weight)
         const height_ft = document.forms["surveyForm"]["height-ft"].value;
@@ -384,7 +385,7 @@
         console.log("income: ", income)
 
         // Send data using fetch()
-        fetch('http://localhost:5000/submit', {
+        fetch('http://localhost:5000/result', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -419,6 +420,13 @@
         .then(data => {
             // Handle the response from the server
             console.log(data);
+			if(!data.error){
+				if(data.prediction == 1) {
+					alert("Unfortunately! You are diabetic")
+				}else{
+					alert("Congratulations! You are not diabetic")
+				}
+			}
         })
         .catch(error => {
             console.error('Error:', error);

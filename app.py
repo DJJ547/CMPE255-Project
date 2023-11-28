@@ -5,7 +5,7 @@ from models.knn import predict_with_knn_model
 from models.decision_tree import predict_with_decision_tree_model
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 CORS(app)
 
 DATASET_COLUMN_ORDER = ['hbp', 'hc', 'cholCheck', 'bmi', 'smoker', 'stroke', 'heart', 'physicalAct', 'fruit', 'veggies', 'heavyAlcohol', 'healthcare', 'doctor', 'healthScore', 'mental', 'physical', 'walk', 'gender', 'age', 'education', 'income']
@@ -16,7 +16,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/submit", methods=["POST"])
+@app.route("/result", methods=["POST"])
 def submit():
     survey_data = request.get_json()
     print(survey_data)
@@ -40,7 +40,8 @@ def submit():
         result = predict_with_decision_tree_model(user_input)
         print("predicted result: ", int(result[0]))
 
-    res = {'error': False, 'message': 'succeed'}
+    result = result.tolist()[0]
+    res = {'error': False, 'prediction': result}
     return Response(json.dumps(res), status=200)
 
 
